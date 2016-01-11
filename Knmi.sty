@@ -1,0 +1,125 @@
+\ProvidesPackage{KNMI.sty}
+
+% ------------------------------------------------- 
+% sets up the beamer template for KNMI use
+% defines Colors : KnmiDarkBlue, MedBlue, LightBlue
+%
+% Hylke de Vries, 17-03-2010
+% Martin Roth, 30-10-2015
+% -------------------------------------------------
+
+\newcommand{\LayoutFolder}{\string~/texmf/knmiBeamer}
+
+%% main theme
+% ------------
+\usetheme[headheight=0.75cm]{boxes}
+
+%% color theme
+% ------------
+\usecolortheme{default}
+\usefonttheme[onlymath]{serif}
+
+%% font theme
+% ------------
+\usefonttheme{structurebold}
+\usepackage{times}
+\usepackage{mathpazo}
+\usepackage{tikz}
+
+\usepackage[absolute,overlay]{textpos}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+% ADDITIONAL THINGS
+% ----------------------
+
+%% KNMI special colors
+% --------------------
+\definecolor{KnmiLightBlue}{RGB}{154,204,212}
+\definecolor{KnmiMedBlue}{RGB}{1,98,167} 
+\definecolor{KnmiDarkBlue}{RGB}{18,53,82}
+
+%% Set special beamer things
+% --------------------------
+\setbeamercolor{structure}{fg=KnmiMedBlue}
+\setbeamercolor{headline}{bg=KnmiLightBlue}
+\setbeamercolor{section in foot}{bg=KnmiLightBlue}
+\setbeamercolor{frametitle}{fg=KnmiDarkBlue}
+\makeatletter
+\setbeamertemplate{background canvas}{%
+   \ifnumequal{\c@framenumber}{1}{%
+      % First frame
+      \color{KnmiLightBlue}\rule{\paperwidth}{\paperheight}
+   }{%
+      \ifnumequal{\c@framenumber}{\inserttotalframenumber}{
+         % Last frame
+         %\color{orange!50}\rule{\paperwidth}{\paperheight}
+      }{%
+         % Other frames
+         %\color{green!50}\rule{\paperwidth}{\paperheight}
+      }%
+   }%
+}
+\makeatother
+
+% color of the main title
+\setbeamercolor{title}{fg=KnmiDarkBlue}
+
+% color of normal text
+\setbeamercolor{normal text}{fg=KnmiDarkBlue}
+
+\setbeamertemplate{headline}{%
+\begin{beamercolorbox}[ht=15ex]{KnmiLightBlue}
+\begin{textblock}{1}(7.5,-0.5)
+ \includegraphics[height=1.5cm]{\LayoutFolder/newKNMI2.pdf}
+\end{textblock}
+\end{beamercolorbox}
+}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.3ex,dp=1ex,center]{section in foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor~~%\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.3ex,dp=1ex,center]{section in foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.3ex,dp=1ex,right]{section in foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+\setbeamertemplate{title page}{%
+\thispagestyle{empty}
+\begin{textblock}{4}(0, 0)
+ \includegraphics[height=\paperheight]{\LayoutFolder/Radartoren.png}
+\end{textblock}
+\begin{textblock}{1}(7.2,0)
+ \includegraphics[height=2.3cm]{\LayoutFolder/newKNMI2.eps}
+\end{textblock}
+\begin{textblock}{7}(9, 2.48)
+ \footnotesize
+ Koninklijk Nederlands\\
+ Meteorologisch Instituut\\
+ \scriptsize
+ \textit{Ministerie van Infrastructuur en Milieu}
+\end{textblock}
+\begin{textblock}{7}(8.5, 7)
+ \centering
+ \inserttitle\\[1cm]
+ \insertauthor
+\end{textblock}
+}
+
+
+
+\hypersetup{colorlinks, linkcolor=, urlcolor=red}
