@@ -1,4 +1,4 @@
-\ProvidesPackage{KNMI.sty}
+\ProvidesPackage{knmiBeamer}
 
 % ------------------------------------------------- 
 % sets up the beamer template for KNMI use
@@ -7,8 +7,6 @@
 % Hylke de Vries, 17-03-2010
 % Martin Roth, 30-10-2015
 % -------------------------------------------------
-
-\newcommand{\LayoutFolder}{\string~/texmf/knmiBeamer}
 
 %% main theme
 % ------------
@@ -73,7 +71,7 @@
 \setbeamertemplate{headline}{%
 \begin{beamercolorbox}[ht=15ex]{KnmiLightBlue}
 \begin{textblock}{1}(7.5,-0.5)
- \includegraphics[height=1.5cm]{\LayoutFolder/newKNMI2.pdf}
+ \includegraphics[height=1.5cm]{newKNMI2.pdf}
 \end{textblock}
 \end{beamercolorbox}
 }
@@ -101,10 +99,10 @@
 \setbeamertemplate{title page}{%
 \thispagestyle{empty}
 \begin{textblock}{4}(0, 0)
- \includegraphics[height=\paperheight]{\LayoutFolder/Radartoren.png}
+ \includegraphics[height=\paperheight]{Radartoren.png}
 \end{textblock}
 \begin{textblock}{1}(7.2,0)
- \includegraphics[height=2.3cm]{\LayoutFolder/newKNMI2.pdf}
+ \includegraphics[height=2.3cm]{newKNMI2.pdf}
 \end{textblock}
 \begin{textblock}{7}(9, 2.48)
  \footnotesize
