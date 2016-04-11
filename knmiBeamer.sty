@@ -35,9 +35,12 @@
 
 %% KNMI special colors
 % --------------------
-\definecolor{KnmiLightBlue}{RGB}{154,204,212}
-\definecolor{KnmiMedBlue}{RGB}{1,98,167} 
+\definecolor{KnmiLightBlue}{RGB}{143,202,231}
+\definecolor{KnmiMedBlue}{RGB}{0,123,199} 
 \definecolor{KnmiDarkBlue}{RGB}{18,53,82}
+\definecolor{KnmiRed}{RGB}{213,43,30}
+\definecolor{KnmiYellow}{RGB}{249,225,30}
+\definecolor{KnmiGreen}{RGB}{57,135,12}
 
 %% Set special beamer things
 % --------------------------
@@ -45,6 +48,7 @@
 \setbeamercolor{headline}{bg=KnmiLightBlue}
 \setbeamercolor{section in foot}{bg=KnmiLightBlue}
 \setbeamercolor{frametitle}{fg=KnmiDarkBlue}
+\setbeamercolor{alerted text}{fg=KnmiRed}
 \makeatletter
 \setbeamertemplate{background canvas}{%
    \ifnumequal{\c@framenumber}{1}{%
@@ -121,4 +125,4 @@
 
 
 
-\hypersetup{colorlinks, linkcolor=, urlcolor=red}
+\hypersetup{colorlinks, linkcolor=, urlcolor=KnmiRed}
