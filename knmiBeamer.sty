@@ -8,6 +8,8 @@
 % Martin Roth, 30-10-2015
 % -------------------------------------------------
 
+\newif\ifEngels
+
 %% main theme
 % ------------
 \usetheme[headheight=0.75cm]{boxes}
@@ -109,13 +111,23 @@
 \begin{textblock}{1}(7.2,0)
  \includegraphics[height=2.3cm]{newKNMI2.pdf}
 \end{textblock}
-\begin{textblock}{7}(9, 2.48)
- \footnotesize
- Koninklijk Nederlands\\
- Meteorologisch Instituut\\
- \scriptsize
- \textit{Ministerie van Infrastructuur en Milieu}
-\end{textblock}
+\ifEngels
+  \begin{textblock}{7}(9, 2.48)
+   \footnotesize
+   Royal Netherlands\\
+   Meteorological Institute\\
+   \scriptsize
+   \textit{Ministry of Infrastructure and the\\ Environment}
+  \end{textblock}
+\else 
+  \begin{textblock}{7}(9, 2.48)
+   \footnotesize
+   Koninklijk Nederlands\\
+   Meteorologisch Instituut\\
+   \scriptsize
+   \textit{Ministerie van Infrastructuur en Milieu}
+  \end{textblock}
+\fi
 \begin{textblock}{7}(8.5, 7)
  \centering
  \inserttitle\\[1cm]
