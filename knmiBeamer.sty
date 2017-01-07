@@ -88,13 +88,13 @@
 {
   \leavevmode%
   \hbox{%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.3ex,dp=1ex,center]{section in foot}%
-    \usebeamerfont{author in head/foot}\insertshortauthor~~%\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.3ex,dp=1ex,center]{section in foot}%
+  %\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.3ex,dp=1ex,center]{section in foot}%
+    %\usebeamerfont{author in head/foot}\insertshortauthor~~%\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+  %\end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.7\paperwidth,ht=2.3ex,dp=1ex,center]{section in foot}%
     \usebeamerfont{title in head/foot}\insertshorttitle
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.3ex,dp=1ex,right]{section in foot}%
+  \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.3ex,dp=1ex,right]{section in foot}%
     \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
     \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
   \end{beamercolorbox}}%
@@ -131,7 +131,14 @@
 \begin{textblock}{7}(8.5, 7)
  \centering
  \inserttitle\\[1cm]
- \insertauthor
+ \footnotesize
+ \insertsubtitle\\[1cm]
+ \insertauthor\\[1cm]
+ \scriptsize
+ \insertdate
+ 
+ 
+ 
 \end{textblock}
 }
 
