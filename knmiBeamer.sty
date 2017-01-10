@@ -130,7 +130,13 @@
 \fi
 \begin{textblock}{7}(8.5, 7)
  \centering
- \inserttitle\\[1cm]
+ \inserttitle
+ \ifx\insertsubtitle\@empty
+ \else
+   \vskip2ex
+   {\small \insertsubtitle}
+ \fi
+ \vskip3ex
  \insertauthor
 \end{textblock}
 }
@@ -138,3 +144,8 @@
 
 
 \hypersetup{colorlinks, linkcolor=, urlcolor=KnmiRed}
+\ProvidesPackage{knmiBeamer}
+
+% ------------------------------------------------- 
+% sets up the beamer template for KNMI use
+% defines Colors : KnmiDarkBlue, MedBlue, LightBlue
